@@ -50,5 +50,5 @@ fs.readdir('./fonctions/', (err, files) => {
   })
 })
 
-client.login('NDQ3NTExODk2MDkwNzM4Njg4.DeNtTg.YsLlTp-IiOsyvB7BQ4sQUXtYfUM')
+client.login('TOKEN')
 module.exports = client;
