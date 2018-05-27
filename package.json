@@ -1,0 +1,26 @@
+{
+  "name": "astro",
+  "version": "1.0.0",
+  "description": "astro bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "ffmpeg-binaries": "^3.2.2-3",
+    "git": "^0.1.5",
+    "iterate": "^0.1.1",
+    "iterate-js": "^1.1.0",
+    "moment": "^2.22.1",
+    "node-opus": "^0.3.0",
+    "npm": "^6.0.1",
+    "opusscript": "0.0.6",
+    "youtube-audio-stream": "^0.2.0",
+    "youtube-search": "^1.1.1",
+    "ytdl-core": "^0.20.4"
+  },
+  "devDependencies": {}
+}
