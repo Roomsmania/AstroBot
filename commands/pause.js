@@ -1,5 +1,5 @@
 const Command = require('./command')
-const YoutubeStream = require('ytdl-core')
+//const YoutubeStream = require('ytdl-core')
 module.exports = class Pause extends Command {
 
   static match (message) {

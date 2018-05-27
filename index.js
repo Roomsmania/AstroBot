@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const Iterate = require('iterate-js')
+const {TOKEN, YOUTUBE_API_KEY} = require('./config')
 const client = new Discord.Client({
   disableEveryone: true,
   fetchAllMembers: true,
@@ -8,6 +9,9 @@ const Play = require('./commands/play')
 const test = require('./commands/test')
 const Pause = require('./commands/pause')
 const Resume = require('./commands/resume')
+const skip = require('./commands/skip')
+const stop = require('./commands/stop')
+const titre = require('./commands/titre')
 
 var fs = require('fs')
 
@@ -30,6 +34,9 @@ client.on('message', function (message) {
   test.parse(message)
   Pause.parse(message)
   Resume.parse(message)
+  skip.parse(message)
+  stop.parse(message)
+  titre.parse(message)
 })
 
 client.on('message', function(message) {
@@ -50,5 +57,5 @@ fs.readdir('./fonctions/', (err, files) => {
   })
 })
 
-client.login('TOKEN')
+client.login(TOKEN)
 module.exports = client;

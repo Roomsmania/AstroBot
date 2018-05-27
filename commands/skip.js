@@ -1,10 +1,10 @@
 const Command = require('./command')
 const fonctions = require('../fonctions/fonctions');
 const YoutubeStream = require('ytdl-core')
-module.exports = class Play extends Command {
+module.exports = class Skip extends Command {
 
   static match (message) {
-    return message.content.startsWith('!play')
+    return message.content.startsWith('!skip')
   }
 
   static action (message) {
@@ -12,8 +12,9 @@ module.exports = class Play extends Command {
       if (!message.member.voiceChannel) return message.channel.send(':warning: Vous devez être connecté dans un salon-vocal !')
       message.member.voiceChannel.join()
     }
-    let args = message.content.split(" ").slice(1).join(" ")
-    if (!args) return message.channel.send(':warning Veuillez spécifier votre musique !')
-    fonctions.play(message, fonctions.enqueue(message.guild.id), args)
+    if(!message.guild.voiceConnection.player.dispatcher || message.guild.voiceConnection.player.dispatcher.paused) return message.channel.send(':warning: Le bot ne joue pas !');
+    message.guild.voiceConnection.player.dispatcher.end()
+    message.channel.send(':fast_forward: Changement de la musique en cours !');
+
   }
 }
